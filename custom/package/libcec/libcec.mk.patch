@@ -1,0 +1,13 @@
+--- buildroot/package/libcec/libcec.mk	2017-08-09 13:58:16.284577209 +0200
++++ custom/package/libcec/libcec.mk	2017-08-08 15:47:08.594460033 +0200
+@@ -26,6 +26,10 @@
+ LIBCEC_DEPENDENCIES += host-swig $(if $(BR2_PACKAGE_PYTHON3),python3,python)
+ endif
+ 
++ifeq ($(BR2_PACKAGE_RECALBOX_TARGET_XU4),y)
++LIBCEC_CONF_OPTS += -DHAVE_EXYNOS_API=1
++endif
++
+ ifeq ($(BR2_PACKAGE_RPI_USERLAND),y)
+ LIBCEC_DEPENDENCIES += rpi-userland
+ LIBCEC_CONF_OPTS += \

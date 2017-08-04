@@ -1,0 +1,10 @@
+--- buildroot/package/eigen/eigen.mk	2017-08-09 13:58:16.284577209 +0200
++++ custom/package/eigen/eigen.mk	2017-08-08 15:47:08.594460033 +0200
+@@ -33,6 +33,7 @@
+ 	$(RM) -r $(EIGEN_DEST_DIR)
+ 	mkdir -p $(EIGEN_DEST_DIR)
+ 	cp -a $(@D)/Eigen $(EIGEN_DEST_DIR)
++        cp $(@D)/signature_of_eigen3_matrix_library $(EIGEN_DEST_DIR)
+ 	$(EIGEN_INSTALL_UNSUPPORTED_MODULES_CMDS)
+ 	$(INSTALL) -D -m 0644 $(@D)/eigen3.pc \
+ 		$(STAGING_DIR)/usr/lib/pkgconfig/eigen3.pc

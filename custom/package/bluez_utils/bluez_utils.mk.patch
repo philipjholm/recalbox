@@ -1,0 +1,12 @@
+--- buildroot/package/bluez_utils/bluez_utils.mk	2017-08-09 13:58:16.284577209 +0200
++++ custom/package/bluez_utils/bluez_utils.mk	2017-08-08 15:47:08.594460033 +0200
+@@ -27,7 +27,8 @@
+ ifeq ($(BR2_PACKAGE_BLUEZ_UTILS_AUDIO),y)
+ BLUEZ_UTILS_DEPENDENCIES +=	\
+ 	alsa-lib		\
+-	libsndfile
++	libsndfile		\
++	libvorbis
+ BLUEZ_UTILS_CONF_OPTS +=	\
+ 	--enable-alsa	\
+ 	--enable-audio

@@ -1,0 +1,12 @@
+--- buildroot/package/mesa3d/mesa3d.mk	2017-08-09 13:58:16.284577209 +0200
++++ custom/package/mesa3d/mesa3d.mk	2017-08-08 15:47:08.594460033 +0200
+@@ -177,6 +177,9 @@
+ MESA3D_CONF_OPTS += --disable-gles1 --disable-gles2
+ endif
+ 
++# force mesa3d to static=no while recalbox forces it
++MESA3D_CONF_OPTS += --enable-static=no
++
+ # Avoid automatic search of llvm-config
+ MESA3D_CONF_OPTS += --with-llvm-prefix=$(STAGING_DIR)/usr/bin
+ 

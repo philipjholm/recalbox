@@ -1,0 +1,17 @@
+--- buildroot/package/omxplayer/omxplayer.mk	2017-08-09 13:58:16.284577209 +0200
++++ custom/package/omxplayer/omxplayer.mk	2017-08-08 15:47:08.594460033 +0200
+@@ -40,7 +40,13 @@
+ endef
+ 
+ define OMXPLAYER_INSTALL_TARGET_CMDS
+-	$(INSTALL) -m 0755 -D $(@D)/omxplayer.bin $(TARGET_DIR)/usr/bin/omxplayer
++	$(INSTALL) -m 0755 -D $(@D)/omxplayer.bin $(TARGET_DIR)/usr/bin/omxplayer.bin
++        $(INSTALL) -m 755 $(@D)/omxplayer $(TARGET_DIR)/usr/bin/omxplayer
++        mkdir -p $(TARGET_DIR)/usr/omxplayer/
++        $(INSTALL) -m 755 $(@D)/dbuscontrol.sh $(TARGET_DIR)/usr/omxplayer/dbuscontrol.sh
++        mkdir -p $(TARGET_DIR)/usr/share/fonts/truetype/freefont/
++        $(INSTALL) -m 644 $(@D)/fonts/FreeSans.ttf $(TARGET_DIR)/usr/share/fonts/truetype/freefont/
++        $(INSTALL) -m 644 $(@D)/fonts/FreeSansOblique.ttf $(TARGET_DIR)/usr/share/fonts/truetype/freefont/
+ endef
+ 
+ $(eval $(generic-package))

@@ -1,0 +1,10 @@
+--- buildroot/package/sdl_sound/Config.in	2017-08-09 13:58:16.284577209 +0200
++++ custom/package/sdl_sound/Config.in	2017-08-08 15:47:08.594460033 +0200
+@@ -1,6 +1,6 @@
+ config BR2_PACKAGE_SDL_SOUND
+ 	bool "SDL_sound"
+-	depends on BR2_PACKAGE_SDL
++	depends on BR2_PACKAGE_SDL2
+ 	select BR2_PACKAGE_LIBICONV if !BR2_ENABLE_LOCALE
+ 	help
+ 	  SDL_sound is a library that handles the decoding of several

@@ -1,0 +1,19 @@
+--- buildroot/package/nodejs/Config.in	2017-08-09 13:58:16.284577209 +0200
++++ custom/package/nodejs/Config.in	2017-08-08 15:47:08.594460033 +0200
+@@ -1,6 +1,6 @@
+ comment "nodejs needs a toolchain w/ C++, dynamic library, threads, gcc >= 4.8, wchar"
+ 	depends on BR2_USE_MMU
+-	depends on BR2_arm || BR2_i386 || BR2_x86_64 || BR2_mipsel
++	depends on BR2_arm || BR2_i386 || BR2_x86_64 || BR2_mipsel || BR2_aarch64
+ 	depends on !BR2_MIPS_SOFT_FLOAT
+ 	depends on !BR2_ARM_CPU_ARMV4
+ 	depends on !BR2_INSTALL_LIBSTDCPP || BR2_STATIC_LIBS || !BR2_TOOLCHAIN_HAS_THREADS || \
+@@ -10,7 +10,7 @@
+ 	bool "nodejs"
+ 	depends on BR2_TOOLCHAIN_HAS_THREADS
+ 	depends on BR2_INSTALL_LIBSTDCPP
+-	depends on BR2_arm || BR2_i386 || BR2_x86_64 || BR2_mipsel
++	depends on BR2_arm || BR2_i386 || BR2_x86_64 || BR2_mipsel || BR2_aarch64
+ 	depends on !BR2_MIPS_SOFT_FLOAT
+ 	# ARM needs BLX, so v5t+
+ 	depends on !BR2_ARM_CPU_ARMV4

@@ -1,0 +1,12 @@
+--- buildroot/package/nodejs/nodejs.mk	2017-08-09 13:58:16.284577209 +0200
++++ custom/package/nodejs/nodejs.mk	2017-08-08 15:47:08.594460033 +0200
+@@ -90,6 +90,9 @@
+ NODEJS_CPU = mipsel
+ else ifeq ($(BR2_arm),y)
+ NODEJS_CPU = arm
++else ifeq ($(BR2_aarch64),y)
++NODEJS_CPU = arm64
++
+ # V8 needs to know what floating point ABI the target is using.
+ NODEJS_ARM_FP = $(call qstrip,$(BR2_GCC_TARGET_FLOAT_ABI))
+ endif

@@ -1,0 +1,22 @@
+--- buildroot/package/kodi/Config.in	2017-08-09 13:58:16.284577209 +0200
++++ custom/package/kodi/Config.in	2017-08-08 15:47:08.594460033 +0200
+@@ -1,7 +1,7 @@
+ config BR2_PACKAGE_KODI_ARCH_SUPPORTS
+ 	bool
+ 	depends on BR2_USE_MMU # libcdio, and others
+-	default y if (BR2_arm || (BR2_mipsel && BR2_TOOLCHAIN_USES_GLIBC) || BR2_i386 || BR2_x86_64) \
++	default y if (BR2_arm || (BR2_mipsel && BR2_TOOLCHAIN_USES_GLIBC) || BR2_i386 || BR2_x86_64 || BR2_aarch64) \
+ 		&& BR2_PACKAGE_FFMPEG_ARCH_SUPPORTS \
+ 		&& BR2_TOOLCHAIN_HAS_SYNC_8
+ 
+@@ -96,6 +96,10 @@
+ 	select BR2_PACKAGE_PYTHON_UNICODEDATA
+ 	select BR2_PACKAGE_PYTHON_ZLIB
+ 	select BR2_PACKAGE_READLINE
++	select BR2_PACKAGE_SDL
++	select BR2_PACKAGE_SDL2
++	select BR2_PACKAGE_SDL_X11 if BR2_PACKAGE_KODI_GL
++	select BR2_PACKAGE_SDL_IMAGE if BR2_PACKAGE_KODI_GL
+ 	select BR2_PACKAGE_SQLITE
+ 	select BR2_PACKAGE_TAGLIB
+ 	select BR2_PACKAGE_TIFF

@@ -1,0 +1,10 @@
+--- buildroot/package/lirc-tools/lirc-tools.mk	2017-08-09 13:58:16.284577209 +0200
++++ custom/package/lirc-tools/lirc-tools.mk	2017-08-08 15:47:08.594460033 +0200
+@@ -16,6 +16,7 @@
+ 
+ LIRC_TOOLS_CONF_ENV = XSLTPROC=yes
+ LIRC_TOOLS_CONF_OPTS = --without-x
++LIRC_TOOLS_MAKE=$(MAKE1)
+ 
+ ifeq ($(BR2_PACKAGE_HAS_UDEV),y)
+ LIRC_TOOLS_DEPENDENCIES += udev

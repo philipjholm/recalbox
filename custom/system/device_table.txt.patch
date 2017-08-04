@@ -1,0 +1,12 @@
+--- buildroot/system/device_table.txt	2017-08-09 13:58:16.284577209 +0200
++++ custom/system/device_table.txt	2017-08-08 15:47:08.594460033 +0200
+@@ -11,7 +11,8 @@
+ /etc					d	755	0	0	-	-	-	-	-
+ /root					d	700	0	0	-	-	-	-	-
+ /var/www				d	755	33	33	-	-	-	-	-
+-/etc/shadow				f	600	0	0	-	-	-	-	-
++# recalbox doesn't use the /etc/shadow
++#/etc/shadow				f	600	0	0	-	-	-	-	-
+ /etc/passwd				f	644	0	0	-	-	-	-	-
+ /etc/network/if-up.d			d	755	0	0	-	-	-	-	-
+ /etc/network/if-pre-up.d		d	755	0	0	-	-	-	-	-
