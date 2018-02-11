@@ -3,6 +3,7 @@
 # FMSX
 #
 ################################################################################
+
 LIBRETRO_FMSX_VERSION = 8ca1dca4af11a6edf8681ad1987e37512c4abf47
 LIBRETRO_FMSX_SITE = $(call github,libretro,fmsx-libretro,$(LIBRETRO_FMSX_VERSION))
 

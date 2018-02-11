@@ -6,7 +6,6 @@
 
 RECALBOX_ROMFS_SOURCE =
 RECALBOX_ROMFS_SITE =
-RECALBOX_ROMFS_INSTALL_STAGING = NO
 
 ES_SYSTEMS = $(@D)/es_systems.cfg
 ES_SYSTEMS_TMP = $(ES_SYSTEMS).tmp
@@ -29,15 +28,15 @@ CONFIGGEN_STD_CMD = python /usr/lib/python2.7/site-packages/configgen/emulatorla
 # $5 = platform
 # $6 = theme
 define RECALBOX_ROMFS_CALL_ADD_SYSTEM
-    echo -e '<system>\n' \
-    '<fullname>$(2)</fullname>\n' \
-    "<name>$(3)</name>\n" \
-    '<path>/recalbox/share/roms/$(3)</path>\n' \
-    '<extension>$(4)</extension>\n' \
-    "<command>$(CONFIGGEN_STD_CMD)</command>\n" \
-    '<platform>$(5)</platform>\n' \
-    '<theme>$(6)</theme>\n' \
-    '<emulators>' > $(1)
+	echo -e '<system>\n' \
+	'<fullname>$(2)</fullname>\n' \
+	"<name>$(3)</name>\n" \
+	'<path>/recalbox/share/roms/$(3)</path>\n' \
+	'<extension>$(4)</extension>\n' \
+	"<command>$(CONFIGGEN_STD_CMD)</command>\n" \
+	'<platform>$(5)</platform>\n' \
+	'<theme>$(6)</theme>\n' \
+	'<emulators>' > $(1)
 endef
 
 # function to add the emulator part of a XML
@@ -64,8 +63,8 @@ RECALBOX_ROMFS_CALL_STANDALONE_EMULATOR = echo -e '<emulator name="$(2)"/>' >> $
 # $2 = system rom source dir
 # $3 = system rom destination dir
 define RECALBOX_ROMFS_CALL_END_SYSTEM
-    echo -e '</emulators>\n</system>' >> $(1)
-    cp -R $(2) $(3)
+	echo -e '</emulators>\n</system>' >> $(1)
+	cp -R $(2) $(3)
 endef
 
 # function to add a new system that only has a standalone emulator
@@ -91,17 +90,17 @@ RECALBOX_ROMFS_CALL_ADD_STANDALONE_SYSTEM = $(call RECALBOX_ROMFS_CALL_ADD_STAND
 # $8 = system rom destination dir
 # $9 = full path to roms
 define RECALBOX_ROMFS_CALL_ADD_STANDALONE_SYSTEM_FULLPATH
-    echo -e '<system>\n' \
-    '<fullname>$(2)</fullname>\n' \
-    "<name>$(3)</name>\n" \
-    '<path>$(9)</path>\n' \
-    '<extension>$(4)</extension>\n' \
-    "<command>$(CONFIGGEN_STD_CMD)</command>\n" \
-    '<platform>$(5)</platform>\n' \
-    '<theme>$(6)</theme>\n' \
-    '<emulators />\n' \
-    '</system>' >> $(1)
-    cp -R $(7) $(8)
+	echo -e '<system>\n' \
+	'<fullname>$(2)</fullname>\n' \
+	"<name>$(3)</name>\n" \
+	'<path>$(9)</path>\n' \
+	'<extension>$(4)</extension>\n' \
+	"<command>$(CONFIGGEN_STD_CMD)</command>\n" \
+	'<platform>$(5)</platform>\n' \
+	'<theme>$(6)</theme>\n' \
+	'<emulators />\n' \
+	'</system>' >> $(1)
+	cp -R $(7) $(8)
 endef
 
 # Init the es_systems.cfg
@@ -118,14 +117,14 @@ define RECALBOX_ROMFS_ES_SYSTEMS
 	"</system>\n" \
 	'</systemList>' >>  $(ES_SYSTEMS_TMP)
 	xmllint --format $(ES_SYSTEMS_TMP) > $(ES_SYSTEMS)
-	
+
 endef
 RECALBOX_ROMFS_CONFIGURE_CMDS += $(RECALBOX_ROMFS_ES_SYSTEMS)
 
 # Copy rom dirs
 define RECALBOX_ROMFS_ROM_DIRS
 	cp -R $(@D)/../recalbox-romfs-*/roms $(@D)
-	
+
 endef
 RECALBOX_ROMFS_CONFIGURE_CMDS += $(RECALBOX_ROMFS_ROM_DIRS)
 
@@ -139,23 +138,23 @@ endef
 
 # Add necessary dependencies
 # System: amiga600
- ifeq ($(BR2_PACKAGE_AMIBERRY),y)
- 	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-amiga600
+ifeq ($(BR2_PACKAGE_AMIBERRY),y)
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-amiga600
 endif
- 	
+
 # System: amiga1200
- ifeq ($(BR2_PACKAGE_AMIBERRY),y)
- 	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-amiga1200
+ifeq ($(BR2_PACKAGE_AMIBERRY),y)
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-amiga1200
 endif
- 	
+
 # System: amstradcpc
 ifneq ($(BR2_PACKAGE_LIBRETRO_CAP32),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-amstradcpc
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-amstradcpc
 endif
 
 # System: apple2
 ifeq ($(BR2_PACKAGE_LINAPPLE_PIE),y)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-apple2
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-apple2
 endif
 
 # System: atari2600
@@ -190,12 +189,12 @@ endif
 
 # System: dos
 ifeq ($(BR2_PACKAGE_DOSBOX),y)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-dos
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-dos
 endif
 
 # Sytem: dreamcast
 ifeq ($(BR2_PACKAGE_REICAST),y)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-dreamcast
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-dreamcast
 endif
 
 # System: fba
@@ -220,7 +219,7 @@ endif
 
 # System: gamegear
 ifneq ($(BR2_PACKAGE_LIBRETRO_GENESISPLUSGX),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-gamegear
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-gamegear
 endif
 
 # System: gb
@@ -230,7 +229,7 @@ endif
 
 # System: gba
 ifneq ($(BR2_PACKAGE_LIBRETRO_GPSP)$(BR2_PACKAGE_LIBRETRO_MGBA)$(BR2_PACKAGE_LIBRETRO_METEOR),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-gba
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-gba
 endif
 
 # System: gbc
@@ -240,22 +239,22 @@ endif
 
 # System: gw
 ifneq ($(BR2_PACKAGE_LIBRETRO_GW),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-gw
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-gw
 endif
 
 # System: lutro
 ifneq ($(BR2_PACKAGE_LIBRETRO_LUTRO),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-lutro
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-lutro
 endif
 
 # System: lynx
 ifneq ($(BR2_PACKAGE_LIBRETRO_HANDY)$(BR2_PACKAGE_LIBRETRO_BEETLE_LYNX),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-lynx
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-lynx
 endif
 
 # System: mame
 ifneq ($(BR2_PACKAGE_LIBRETRO_MAME2003)$(BR2_PACKAGE_LIBRETRO_IMAME)$(BR2_PACKAGE_ADVANCEMAME)$(BR2_PACKAGE_LIBRETRO_MAME2010),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-mame
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-mame
 endif
 
 # System: mastersystem
@@ -270,7 +269,7 @@ endif
 
 # System: moonlight
 ifeq ($(BR2_PACKAGE_MOONLIGHT_EMBEDDED),y)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-moonlight
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-moonlight
 endif
 
 # System: msx
@@ -290,22 +289,22 @@ endif
 
 # System: n64
 ifneq ($(BR2_PACKAGE_MUPEN64PLUS_GLIDEN64)$(BR2_PACKAGE_MUPEN64PLUS_GLES2)$(BR2_PACKAGE_MUPEN64PLUS_GLES2RICE)$(BR2_PACKAGE_MUPEN64PLUS_VIDEO_GLIDE64MK2)$(BR2_PACKAGE_LIBRETRO_GLUPEN64),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-n64
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-n64
 endif
 
 # System: nds
 ifneq ($(BR2_PACKAGE_LIBRETRO_DESMUME)$(BR2_PACKAGE_LIBRETRO_MELONDS),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-nds
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-nds
 endif
 
 # System: neogeo
 ifneq ($(BR2_PACKAGE_LIBRETRO_MAME2003)$(BR2_PACKAGE_LIBRETRO_IMAME)$(BR2_PACKAGE_LIBRETRO_FBA)$(BR2_PACKAGE_PIFBA)$(BR2_PACKAGE_LIBRETRO_MAME2010),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-neogeo
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-neogeo
 endif
 
 # System: nes
 ifneq ($(BR2_PACKAGE_LIBRETRO_FCEUMM)$(BR2_PACKAGE_LIBRETRO_FCEUNEXT)$(BR2_PACKAGE_LIBRETRO_NESTOPIA)$(BR2_PACKAGE_LIBRETRO_QUICKNES),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-nes
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-nes
 endif
 
 # System: ngp
@@ -340,12 +339,12 @@ endif
 
 # System: psp
 ifeq ($(BR2_PACKAGE_PPSSPP),y)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-psp
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-psp
 endif
 
 # System: psx
 ifneq ($(BR2_PACKAGE_LIBRETRO_PCSX)$(BR2_PACKAGE_LIBRETRO_BEETLE_PSX)$(BR2_PACKAGE_LIBRETRO_BEETLE_PSX_HW),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-psx
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-psx
 endif
 
 # System: prboom
@@ -370,17 +369,17 @@ endif
 
 # System: sg1000
 ifneq ($(BR2_PACKAGE_LIBRETRO_GENESISPLUSGX),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-sg1000
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-sg1000
 endif
 
 # System: snes
 ifneq ($(BR2_PACKAGE_LIBRETRO_CATSFC)$(BR2_PACKAGE_LIBRETRO_POCKETSNES)$(BR2_PACKAGE_LIBRETRO_SNES9X_NEXT)$(BR2_PACKAGE_LIBRETRO_SNES9X),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-snes
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-snes
 endif
 
 # System: vectrex
 ifneq ($(BR2_PACKAGE_LIBRETRO_VECX),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-vectrex
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-vectrex
 endif
 
 # System: virtualboy
@@ -405,7 +404,7 @@ endif
 
 # System: x68000
 ifneq ($(BR2_PACKAGE_LIBRETRO_PX68K),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-x68000
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-x68000
 endif
 
 # System: zx81
@@ -420,7 +419,7 @@ endif
 
 # System: 3do
 ifneq ($(BR2_PACKAGE_LIBRETRO_4DO),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-3do
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-3do
 endif
 
 $(eval $(generic-package))

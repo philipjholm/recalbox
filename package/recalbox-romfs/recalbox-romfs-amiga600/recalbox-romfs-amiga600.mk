@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system amiga600 --extension '.adf .Adf .ADF .uae' --fullname 'Amiga 600' --platform amiga --theme amiga600 BR2_PACKAGE_AMIBERRY
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_AMIGA600_SOURCE = 
-RECALBOX_ROMFS_AMIGA600_SITE = 
-RECALBOX_ROMFS_AMIGA600_INSTALL_STAGING = NO
+RECALBOX_ROMFS_AMIGA600_SOURCE =
+RECALBOX_ROMFS_AMIGA600_SITE =
 # Set the system name
 SYSTEM_NAME_AMIGA600 = amiga600
 SYSTEM_XML_AMIGA600 = $(@D)/$(SYSTEM_NAME_AMIGA600).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_AMIGA600 = $(RECALBOX_ROMFS_AMIGA600_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifeq ($(BR2_PACKAGE_AMIBERRY),y)
 define CONFIGURE_AMIGA600

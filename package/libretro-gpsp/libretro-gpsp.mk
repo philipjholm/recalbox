@@ -3,6 +3,7 @@
 # GPSP
 #
 ################################################################################
+
 LIBRETRO_GPSP_VERSION = dbb83e56abfa2d9de8594f4effab9f7ea91df711
 LIBRETRO_GPSP_SITE = $(call github,libretro,gpsp,$(LIBRETRO_GPSP_VERSION))
 

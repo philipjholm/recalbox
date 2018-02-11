@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system gamegear --extension '.gg .GG .zip .ZIP' --fullname 'Sega Game Gear' --platform gamegear --theme gamegear libretro:genesisplusgx:BR2_PACKAGE_LIBRETRO_GENESISPLUSGX
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_GAMEGEAR_SOURCE = 
-RECALBOX_ROMFS_GAMEGEAR_SITE = 
-RECALBOX_ROMFS_GAMEGEAR_INSTALL_STAGING = NO
+RECALBOX_ROMFS_GAMEGEAR_SOURCE =
+RECALBOX_ROMFS_GAMEGEAR_SITE =
 # Set the system name
 SYSTEM_NAME_GAMEGEAR = gamegear
 SYSTEM_XML_GAMEGEAR = $(@D)/$(SYSTEM_NAME_GAMEGEAR).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_GAMEGEAR = $(RECALBOX_ROMFS_GAMEGEAR_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_GENESISPLUSGX),)
 define CONFIGURE_MAIN_GAMEGEAR_START
@@ -40,8 +38,6 @@ define CONFIGURE_GAMEGEAR_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_GAMEGEAR))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_GAMEGEAR_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_GAMEGEAR),$(SOURCE_ROMDIR_GAMEGEAR),$(@D))

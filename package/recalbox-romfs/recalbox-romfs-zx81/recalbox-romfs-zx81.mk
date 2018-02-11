@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system zx81 --extension '.tzx .TZX .p .P .zip .ZIP' --fullname 'ZX81' --platform zx81 --theme zx81 libretro:81:BR2_PACKAGE_LIBRETRO_81
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_ZX81_SOURCE = 
-RECALBOX_ROMFS_ZX81_SITE = 
-RECALBOX_ROMFS_ZX81_INSTALL_STAGING = NO
+RECALBOX_ROMFS_ZX81_SOURCE =
+RECALBOX_ROMFS_ZX81_SITE =
 # Set the system name
 SYSTEM_NAME_ZX81 = zx81
 SYSTEM_XML_ZX81 = $(@D)/$(SYSTEM_NAME_ZX81).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_ZX81 = $(RECALBOX_ROMFS_ZX81_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_81),)
 define CONFIGURE_MAIN_ZX81_START
@@ -40,8 +38,6 @@ define CONFIGURE_ZX81_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_ZX81))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_ZX81_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_ZX81),$(SOURCE_ROMDIR_ZX81),$(@D))

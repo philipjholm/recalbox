@@ -3,6 +3,7 @@
 # NXENGINE
 #
 ################################################################################
+
 LIBRETRO_NXENGINE_VERSION = edc96c31fbfca4513679a1dd575092155cbd6cfe
 LIBRETRO_NXENGINE_SITE = $(call github,libretro,nxengine-libretro,$(LIBRETRO_NXENGINE_VERSION))
 

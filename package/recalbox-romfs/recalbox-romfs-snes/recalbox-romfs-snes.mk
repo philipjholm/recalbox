@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system snes --extension '.smc .sfc .SMC .SFC .zip .ZIP .mgd .MGD' --fullname 'Super Nintendo Entertainment System' --platform snes --theme snes libretro:catsfc:BR2_PACKAGE_LIBRETRO_CATSFC libretro:pocketsnes:BR2_PACKAGE_LIBRETRO_POCKETSNES libretro:snes9x_next:BR2_PACKAGE_LIBRETRO_SNES9X_NEXT libretro:snes9x:BR2_PACKAGE_LIBRETRO_SNES9X
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_SNES_SOURCE = 
-RECALBOX_ROMFS_SNES_SITE = 
-RECALBOX_ROMFS_SNES_INSTALL_STAGING = NO
+RECALBOX_ROMFS_SNES_SOURCE =
+RECALBOX_ROMFS_SNES_SITE =
 # Set the system name
 SYSTEM_NAME_SNES = snes
 SYSTEM_XML_SNES = $(@D)/$(SYSTEM_NAME_SNES).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_SNES = $(RECALBOX_ROMFS_SNES_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_CATSFC)$(BR2_PACKAGE_LIBRETRO_POCKETSNES)$(BR2_PACKAGE_LIBRETRO_SNES9X_NEXT)$(BR2_PACKAGE_LIBRETRO_SNES9X),)
 define CONFIGURE_MAIN_SNES_START
@@ -58,8 +56,6 @@ define CONFIGURE_SNES_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_SNES))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_SNES_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_SNES),$(SOURCE_ROMDIR_SNES),$(@D))

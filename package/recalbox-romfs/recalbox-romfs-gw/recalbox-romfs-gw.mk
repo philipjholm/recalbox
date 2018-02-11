@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system gw --extension '.zip .ZIP .mgw .MGW' --fullname 'Game and Watch' --platform gw --theme gw libretro:vb:BR2_PACKAGE_LIBRETRO_GW
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_GW_SOURCE = 
-RECALBOX_ROMFS_GW_SITE = 
-RECALBOX_ROMFS_GW_INSTALL_STAGING = NO
+RECALBOX_ROMFS_GW_SOURCE =
+RECALBOX_ROMFS_GW_SITE =
 # Set the system name
 SYSTEM_NAME_GW = gw
 SYSTEM_XML_GW = $(@D)/$(SYSTEM_NAME_GW).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_GW = $(RECALBOX_ROMFS_GW_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_GW),)
 define CONFIGURE_MAIN_GW_START
@@ -40,8 +38,6 @@ define CONFIGURE_GW_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_GW))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_GW_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_GW),$(SOURCE_ROMDIR_GW),$(@D))

@@ -3,9 +3,9 @@
 # BEETLE_PSX
 #
 ################################################################################
+
 LIBRETRO_BEETLE_PSX_VERSION = 7616e0125984bc07deb6a0526c30c3cac7e4e388
 LIBRETRO_BEETLE_PSX_SITE = $(call github,libretro,beetle-psx-libretro,$(LIBRETRO_BEETLE_PSX_VERSION))
-
 
 define LIBRETRO_BEETLE_PSX_BUILD_CMDS
 	CFLAGS="$(TARGET_CFLAGS)" CXXFLAGS="$(TARGET_CXXFLAGS)" $(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" -C $(@D)/ -f Makefile platform="$(LIBRETRO_PLATFORM)"

@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system atari2600 --extension '.a26 .A26 .bin .BIN .zip .ZIP' --fullname 'Atari 2600' --platform atari2600 --theme atari2600 libretro:stella:BR2_PACKAGE_LIBRETRO_STELLA
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_ATARI2600_SOURCE = 
-RECALBOX_ROMFS_ATARI2600_SITE = 
-RECALBOX_ROMFS_ATARI2600_INSTALL_STAGING = NO
+RECALBOX_ROMFS_ATARI2600_SOURCE =
+RECALBOX_ROMFS_ATARI2600_SITE =
 # Set the system name
 SYSTEM_NAME_ATARI2600 = atari2600
 SYSTEM_XML_ATARI2600 = $(@D)/$(SYSTEM_NAME_ATARI2600).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_ATARI2600 = $(RECALBOX_ROMFS_ATARI2600_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_STELLA),)
 define CONFIGURE_MAIN_ATARI2600_START
@@ -40,8 +38,6 @@ define CONFIGURE_ATARI2600_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_ATARI2600))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_ATARI2600_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_ATARI2600),$(SOURCE_ROMDIR_ATARI2600),$(@D))

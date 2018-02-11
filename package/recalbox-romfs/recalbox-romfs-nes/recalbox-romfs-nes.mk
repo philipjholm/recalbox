@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system nes --extension '.nes .NES .zip .ZIP' --fullname 'Nintendo Entertainment System' --platform nes --theme nes libretro:fceumm:BR2_PACKAGE_LIBRETRO_FCEUMM libretro:fceunext:BR2_PACKAGE_LIBRETRO_FCEUNEXT libretro:nestopia:BR2_PACKAGE_LIBRETRO_NESTOPIA libretro:quicknes:BR2_PACKAGE_LIBRETRO_QUICKNES
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_NES_SOURCE = 
-RECALBOX_ROMFS_NES_SITE = 
-RECALBOX_ROMFS_NES_INSTALL_STAGING = NO
+RECALBOX_ROMFS_NES_SOURCE =
+RECALBOX_ROMFS_NES_SITE =
 # Set the system name
 SYSTEM_NAME_NES = nes
 SYSTEM_XML_NES = $(@D)/$(SYSTEM_NAME_NES).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_NES = $(RECALBOX_ROMFS_NES_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_FCEUMM)$(BR2_PACKAGE_LIBRETRO_FCEUNEXT)$(BR2_PACKAGE_LIBRETRO_NESTOPIA)$(BR2_PACKAGE_LIBRETRO_QUICKNES),)
 define CONFIGURE_MAIN_NES_START
@@ -58,8 +56,6 @@ define CONFIGURE_NES_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_NES))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_NES_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_NES),$(SOURCE_ROMDIR_NES),$(@D))

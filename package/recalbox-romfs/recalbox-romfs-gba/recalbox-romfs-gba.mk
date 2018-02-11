@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system gba --extension '.gba .GBA .zip .ZIP' --fullname 'Game Boy Advance' --platform gba --theme gba libretro:gpsp:BR2_PACKAGE_LIBRETRO_GPSP libretro:mgba:BR2_PACKAGE_LIBRETRO_MGBA libretro:meteor:BR2_PACKAGE_LIBRETRO_METEOR
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_GBA_SOURCE = 
-RECALBOX_ROMFS_GBA_SITE = 
-RECALBOX_ROMFS_GBA_INSTALL_STAGING = NO
+RECALBOX_ROMFS_GBA_SOURCE =
+RECALBOX_ROMFS_GBA_SITE =
 # Set the system name
 SYSTEM_NAME_GBA = gba
 SYSTEM_XML_GBA = $(@D)/$(SYSTEM_NAME_GBA).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_GBA = $(RECALBOX_ROMFS_GBA_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_GPSP)$(BR2_PACKAGE_LIBRETRO_MGBA)$(BR2_PACKAGE_LIBRETRO_METEOR),)
 define CONFIGURE_MAIN_GBA_START
@@ -52,8 +50,6 @@ define CONFIGURE_GBA_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_GBA))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_GBA_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_GBA),$(SOURCE_ROMDIR_GBA),$(@D))

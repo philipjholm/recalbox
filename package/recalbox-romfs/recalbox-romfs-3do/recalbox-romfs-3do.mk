@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system 3do --extension '.iso .ISO .cue .CUE' --fullname 'Panasonic 3DO' --platform 3do --theme 3do libretro:4do:BR2_PACKAGE_LIBRETRO_4DO
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_3DO_SOURCE = 
-RECALBOX_ROMFS_3DO_SITE = 
-RECALBOX_ROMFS_3DO_INSTALL_STAGING = NO
+RECALBOX_ROMFS_3DO_SOURCE =
+RECALBOX_ROMFS_3DO_SITE =
 # Set the system name
 SYSTEM_NAME_3DO = 3do
 SYSTEM_XML_3DO = $(@D)/$(SYSTEM_NAME_3DO).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_3DO = $(RECALBOX_ROMFS_3DO_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_4DO),)
 define CONFIGURE_MAIN_3DO_START
@@ -40,8 +38,6 @@ define CONFIGURE_3DO_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_3DO))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_3DO_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_3DO),$(SOURCE_ROMDIR_3DO),$(@D))

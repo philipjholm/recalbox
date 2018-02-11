@@ -3,6 +3,7 @@
 # TGBDUAL
 #
 ################################################################################
+
 LIBRETRO_TGBDUAL_VERSION = 9cf45e9227ced74d593af68db5c624b3c910b08f
 LIBRETRO_TGBDUAL_SITE = $(call github,libretro,tgbdual-libretro,$(LIBRETRO_TGBDUAL_VERSION))
 
@@ -17,4 +18,3 @@ define LIBRETRO_TGBDUAL_INSTALL_TARGET_CMDS
 endef
 
 $(eval $(generic-package))
-

@@ -3,6 +3,7 @@
 # IMAME / MAME2000
 #
 ################################################################################
+
 LIBRETRO_IMAME_VERSION = f8ae2de1ddebaa0e7c61b0568ea09aa20b404117
 LIBRETRO_IMAME_SITE = $(call github,libretro,mame2000-libretro,$(LIBRETRO_IMAME_VERSION))
 

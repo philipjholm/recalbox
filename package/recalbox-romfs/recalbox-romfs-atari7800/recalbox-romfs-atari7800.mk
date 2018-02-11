@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system atari7800 --extension '.a78 .A78 .bin .BIN .zip .ZIP' --fullname 'Atari 7800' --platform atari7800 --theme atari7800 libretro:prosystem:BR2_PACKAGE_LIBRETRO_PROSYSTEM
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_ATARI7800_SOURCE = 
-RECALBOX_ROMFS_ATARI7800_SITE = 
-RECALBOX_ROMFS_ATARI7800_INSTALL_STAGING = NO
+RECALBOX_ROMFS_ATARI7800_SOURCE =
+RECALBOX_ROMFS_ATARI7800_SITE =
 # Set the system name
 SYSTEM_NAME_ATARI7800 = atari7800
 SYSTEM_XML_ATARI7800 = $(@D)/$(SYSTEM_NAME_ATARI7800).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_ATARI7800 = $(RECALBOX_ROMFS_ATARI7800_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_PROSYSTEM),)
 define CONFIGURE_MAIN_ATARI7800_START
@@ -40,8 +38,6 @@ define CONFIGURE_ATARI7800_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_ATARI7800))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_ATARI7800_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_ATARI7800),$(SOURCE_ROMDIR_ATARI7800),$(@D))

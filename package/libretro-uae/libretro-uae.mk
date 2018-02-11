@@ -3,19 +3,20 @@
 # UAE
 #
 ################################################################################
+
 LIBRETRO_UAE_VERSION = 03fe9718bf6eaa125fcb60fbe352fd458f0772ea
 LIBRETRO_UAE_SITE = $(call github,libretro,libretro-uae,master)
 
 ifeq ($(BR2_PACKAGE_RPI_USERLAND),y)
-	UAEPLATFORM=rpi
+  UAEPLATFORM=rpi
 else
-	UAEPLATFORM=unix
-	ifeq ($(BR2_ARM_CPU_HAS_ARM),y)
-		UAEPLATFLAGS=-DARM  -marm
-	endif
-	ifeq ($(BR2_aarch64),y)
-		UAEPLATFLAGS=-DAARCH64
-	endif
+  UAEPLATFORM=unix
+  ifeq ($(BR2_ARM_CPU_HAS_ARM),y)
+    UAEPLATFLAGS=-DARM  -marm
+  endif
+  ifeq ($(BR2_aarch64),y)
+    UAEPLATFLAGS=-DAARCH64
+  endif
 endif
 
 define LIBRETRO_UAE_BUILD_CMDS

@@ -3,6 +3,7 @@
 # SCUMMVM
 #
 ################################################################################
+
 LIBRETRO_SCUMMVM_VERSION = c9730958e069155cfbfa3bc519502895044ca8f3
 LIBRETRO_SCUMMVM_SITE = $(call github,libretro,scummvm,$(LIBRETRO_SCUMMVM_VERSION))
 

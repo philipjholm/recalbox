@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system nds --extension '.nds .NDS .zip .ZIP' --fullname 'Nintendo DS' --platform nds --theme nds libretro:desmume:BR2_PACKAGE_LIBRETRO_DESMUME libretro:melonds:BR2_PACKAGE_LIBRETRO_MELONDS
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_NDS_SOURCE = 
-RECALBOX_ROMFS_NDS_SITE = 
-RECALBOX_ROMFS_NDS_INSTALL_STAGING = NO
+RECALBOX_ROMFS_NDS_SOURCE =
+RECALBOX_ROMFS_NDS_SITE =
 # Set the system name
 SYSTEM_NAME_NDS = nds
 SYSTEM_XML_NDS = $(@D)/$(SYSTEM_NAME_NDS).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_NDS = $(RECALBOX_ROMFS_NDS_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_DESMUME)$(BR2_PACKAGE_LIBRETRO_MELONDS),)
 define CONFIGURE_MAIN_NDS_START
@@ -46,8 +44,6 @@ define CONFIGURE_NDS_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_NDS))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_NDS_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_NDS),$(SOURCE_ROMDIR_NDS),$(@D))

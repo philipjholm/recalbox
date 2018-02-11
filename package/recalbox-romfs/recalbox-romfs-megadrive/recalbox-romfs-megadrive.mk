@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system megadrive --extension '.md .MD .bin .BIN .zip .ZIP .gen .GEN .smd .SMD' --fullname 'Sega Megadrive' --platform megadrive --theme megadrive libretro:genesisplusgx:BR2_PACKAGE_LIBRETRO_GENESISPLUSGX libretro:picodrive:BR2_PACKAGE_LIBRETRO_PICODRIVE
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_MEGADRIVE_SOURCE = 
-RECALBOX_ROMFS_MEGADRIVE_SITE = 
-RECALBOX_ROMFS_MEGADRIVE_INSTALL_STAGING = NO
+RECALBOX_ROMFS_MEGADRIVE_SOURCE =
+RECALBOX_ROMFS_MEGADRIVE_SITE =
 # Set the system name
 SYSTEM_NAME_MEGADRIVE = megadrive
 SYSTEM_XML_MEGADRIVE = $(@D)/$(SYSTEM_NAME_MEGADRIVE).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_MEGADRIVE = $(RECALBOX_ROMFS_MEGADRIVE_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_GENESISPLUSGX)$(BR2_PACKAGE_LIBRETRO_PICODRIVE),)
 define CONFIGURE_MAIN_MEGADRIVE_START
@@ -46,8 +44,6 @@ define CONFIGURE_MEGADRIVE_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_MEGADRIVE))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_MEGADRIVE_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_MEGADRIVE),$(SOURCE_ROMDIR_MEGADRIVE),$(@D))

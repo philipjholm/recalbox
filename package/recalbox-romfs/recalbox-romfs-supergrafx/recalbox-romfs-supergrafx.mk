@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system supergrafx --extension '.pce .PCE .sgx .SGX .zip .ZIP' --fullname 'Supergrafx' --platform supergrafx --theme supergrafx libretro:mednafen_supergrafx:BR2_PACKAGE_LIBRETRO_BEETLE_SUPERGRAFX libretro:pce:BR2_PACKAGE_LIBRETRO_BEETLE_PCE
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_SUPERGRAFX_SOURCE = 
-RECALBOX_ROMFS_SUPERGRAFX_SITE = 
-RECALBOX_ROMFS_SUPERGRAFX_INSTALL_STAGING = NO
+RECALBOX_ROMFS_SUPERGRAFX_SOURCE =
+RECALBOX_ROMFS_SUPERGRAFX_SITE =
 # Set the system name
 SYSTEM_NAME_SUPERGRAFX = supergrafx
 SYSTEM_XML_SUPERGRAFX = $(@D)/$(SYSTEM_NAME_SUPERGRAFX).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_SUPERGRAFX = $(RECALBOX_ROMFS_SUPERGRAFX_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_BEETLE_SUPERGRAFX)$(BR2_PACKAGE_LIBRETRO_BEETLE_PCE),)
 define CONFIGURE_MAIN_SUPERGRAFX_START
@@ -46,8 +44,6 @@ define CONFIGURE_SUPERGRAFX_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_SUPERGRAFX))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_SUPERGRAFX_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_SUPERGRAFX),$(SOURCE_ROMDIR_SUPERGRAFX),$(@D))

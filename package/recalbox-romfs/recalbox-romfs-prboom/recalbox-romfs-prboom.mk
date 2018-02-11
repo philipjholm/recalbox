@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system prboom --extension '.wad .WAD' --fullname 'PrBoom' --platform prboom --theme prboom libretro:prboom:BR2_PACKAGE_LIBRETRO_PRBOOM
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_PRBOOM_SOURCE = 
-RECALBOX_ROMFS_PRBOOM_SITE = 
-RECALBOX_ROMFS_PRBOOM_INSTALL_STAGING = NO
+RECALBOX_ROMFS_PRBOOM_SOURCE =
+RECALBOX_ROMFS_PRBOOM_SITE =
 # Set the system name
 SYSTEM_NAME_PRBOOM = prboom
 SYSTEM_XML_PRBOOM = $(@D)/$(SYSTEM_NAME_PRBOOM).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_PRBOOM = $(RECALBOX_ROMFS_PRBOOM_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_PRBOOM),)
 define CONFIGURE_MAIN_PRBOOM_START
@@ -40,8 +38,6 @@ define CONFIGURE_PRBOOM_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_PRBOOM))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_PRBOOM_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_PRBOOM),$(SOURCE_ROMDIR_PRBOOM),$(@D))

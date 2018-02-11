@@ -3,6 +3,7 @@
 # LUTRO
 #
 ################################################################################
+
 LIBRETRO_LUTRO_VERSION = d9cacd3d66d01d2af5e5e4a1f959f4082eca1e40
 LIBRETRO_LUTRO_SITE = $(call github,libretro,libretro-lutro,$(LIBRETRO_LUTRO_VERSION))
 

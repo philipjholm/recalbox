@@ -3,6 +3,7 @@
 # BEETLE_VB
 #
 ################################################################################
+
 LIBRETRO_BEETLE_VB_VERSION = 1e4a1cb295abe661e065dd1e251259d28d789f9b
 LIBRETRO_BEETLE_VB_SITE = $(call github,libretro,beetle-vb-libretro,$(LIBRETRO_BEETLE_VB_VERSION))
 

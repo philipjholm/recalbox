@@ -3,6 +3,7 @@
 # PCSXREARMED
 #
 ################################################################################
+
 LIBRETRO_PCSX_VERSION = c7dde5efda060c5baf259c6ad39090e1cb1defd6
 LIBRETRO_PCSX_SITE = $(call github,libretro,pcsx_rearmed,$(LIBRETRO_PCSX_VERSION))
 

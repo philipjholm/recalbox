@@ -3,6 +3,7 @@
 # MUPEN64
 #
 ################################################################################
+
 #LIBRETRO_MUPEN64_VERSION = 53c38fefaf51d5c18af23f9eaceab32e80c4034c
 #LIBRETRO_MUPEN64_SITE = $(call github,libretro,mupen64plus-libretro,$(LIBRETRO_MUPEN64_VERSION))
 ##LIBRETRO_MUPEN64_VERSION = bd444b70a522a56e3cbc72a295d38325ddc35232
@@ -12,9 +13,9 @@ LIBRETRO_MUPEN64_SITE = $(call github,gizmo98,mupen64plus-libretro,$(LIBRETRO_MU
 LIBRETRO_MUPEN64_DEPENDENCIES = rpi-userland
 
 ifeq ($(BR2_cortex_a7),y)
-	LIBRETRO_MUPEN64_PLATFORM=rpi2
+  LIBRETRO_MUPEN64_PLATFORM=rpi2
 else
-	LIBRETRO_MUPEN64_PLATFORM=rpi
+  LIBRETRO_MUPEN64_PLATFORM=rpi
 endif
 
 define LIBRETRO_MUPEN64_BUILD_CMDS

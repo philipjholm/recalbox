@@ -3,6 +3,7 @@
 # CAP32
 #
 ################################################################################
+
 LIBRETRO_CAP32_VERSION = 3e14cebabb3d58dd33990158a2379f3759975409
 LIBRETRO_CAP32_SITE = $(call github,libretro,libretro-cap32,$(LIBRETRO_CAP32_VERSION))
 

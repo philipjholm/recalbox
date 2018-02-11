@@ -29,7 +29,6 @@ ifeq ($(BR2_PACKAGE_HAS_LIBGLES),y)
 RECALBOX_EMULATIONSTATION2_DEPENDENCIES += libgles
 endif
 
-
 define RECALBOX_EMULATIONSTATION2_RPI_FIXUP
 	$(SED) 's|/opt/vc/include|$(STAGING_DIR)/usr/include|g' $(@D)/CMakeLists.txt
 	$(SED) 's|/opt/vc/lib|$(STAGING_DIR)/usr/lib|g' $(@D)/CMakeLists.txt

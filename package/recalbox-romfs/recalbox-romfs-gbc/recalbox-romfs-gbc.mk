@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system gbc --extension '.gb .GB .gbc .GBC .zip .ZIP' --fullname 'Game Boy Color' --platform gbc --theme gbc libretro:gambatte:BR2_PACKAGE_LIBRETRO_GAMBATTE libretro:tgbdual:BR2_PACKAGE_LIBRETRO_TGBDUAL
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_GBC_SOURCE = 
-RECALBOX_ROMFS_GBC_SITE = 
-RECALBOX_ROMFS_GBC_INSTALL_STAGING = NO
+RECALBOX_ROMFS_GBC_SOURCE =
+RECALBOX_ROMFS_GBC_SITE =
 # Set the system name
 SYSTEM_NAME_GBC = gbc
 SYSTEM_XML_GBC = $(@D)/$(SYSTEM_NAME_GBC).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_GBC = $(RECALBOX_ROMFS_GBC_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_GAMBATTE)$(BR2_PACKAGE_LIBRETRO_TGBDUAL),)
 define CONFIGURE_MAIN_GBC_START
@@ -46,8 +44,6 @@ define CONFIGURE_GBC_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_GBC))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_GBC_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_GBC),$(SOURCE_ROMDIR_GBC),$(@D))

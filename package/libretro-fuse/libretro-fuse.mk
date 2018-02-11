@@ -3,6 +3,7 @@
 # FUSE
 #
 ################################################################################
+
 LIBRETRO_FUSE_VERSION = 4663186232e20eb4ebddaf5ebdd51d87ad21defc
 LIBRETRO_FUSE_SITE = $(call github,libretro,fuse-libretro,$(LIBRETRO_FUSE_VERSION))
 

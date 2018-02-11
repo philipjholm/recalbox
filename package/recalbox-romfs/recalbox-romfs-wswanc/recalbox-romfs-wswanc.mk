@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system wswanc --extension '.ws .WS .wsc .WSC .zip .ZIP' --fullname 'WonderSwan Color' --platform wonderswancolor --theme wonderswancolor libretro:mednafen_wswan:BR2_PACKAGE_LIBRETRO_BEETLE_WSWAN
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_WSWANC_SOURCE = 
-RECALBOX_ROMFS_WSWANC_SITE = 
-RECALBOX_ROMFS_WSWANC_INSTALL_STAGING = NO
+RECALBOX_ROMFS_WSWANC_SOURCE =
+RECALBOX_ROMFS_WSWANC_SITE =
 # Set the system name
 SYSTEM_NAME_WSWANC = wswanc
 SYSTEM_XML_WSWANC = $(@D)/$(SYSTEM_NAME_WSWANC).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_WSWANC = $(RECALBOX_ROMFS_WSWANC_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_BEETLE_WSWAN),)
 define CONFIGURE_MAIN_WSWANC_START
@@ -40,8 +38,6 @@ define CONFIGURE_WSWANC_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_WSWANC))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_WSWANC_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_WSWANC),$(SOURCE_ROMDIR_WSWANC),$(@D))

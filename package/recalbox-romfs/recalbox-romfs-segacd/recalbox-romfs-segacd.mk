@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system segacd --extension '.cue .CUE .iso .ISO .chd .CHD' --fullname 'Sega CD' --platform segacd --theme segacd libretro:genesisplusgx:BR2_PACKAGE_LIBRETRO_GENESISPLUSGX libretro:picodrive:BR2_PACKAGE_LIBRETRO_PICODRIVE
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_SEGACD_SOURCE = 
-RECALBOX_ROMFS_SEGACD_SITE = 
-RECALBOX_ROMFS_SEGACD_INSTALL_STAGING = NO
+RECALBOX_ROMFS_SEGACD_SOURCE =
+RECALBOX_ROMFS_SEGACD_SITE =
 # Set the system name
 SYSTEM_NAME_SEGACD = segacd
 SYSTEM_XML_SEGACD = $(@D)/$(SYSTEM_NAME_SEGACD).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_SEGACD = $(RECALBOX_ROMFS_SEGACD_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_GENESISPLUSGX)$(BR2_PACKAGE_LIBRETRO_PICODRIVE),)
 define CONFIGURE_MAIN_SEGACD_START
@@ -46,8 +44,6 @@ define CONFIGURE_SEGACD_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_SEGACD))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_SEGACD_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_SEGACD),$(SOURCE_ROMDIR_SEGACD),$(@D))

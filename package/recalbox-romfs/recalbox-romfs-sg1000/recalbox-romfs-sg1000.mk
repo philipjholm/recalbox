@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system sg1000 --extension '.sg .SG .zip .ZIP' --fullname 'Sega SG1000' --platform sg1000 --theme sg1000 libretro:genesisplusgx:BR2_PACKAGE_LIBRETRO_GENESISPLUSGX
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_SG1000_SOURCE = 
-RECALBOX_ROMFS_SG1000_SITE = 
-RECALBOX_ROMFS_SG1000_INSTALL_STAGING = NO
+RECALBOX_ROMFS_SG1000_SOURCE =
+RECALBOX_ROMFS_SG1000_SITE =
 # Set the system name
 SYSTEM_NAME_SG1000 = sg1000
 SYSTEM_XML_SG1000 = $(@D)/$(SYSTEM_NAME_SG1000).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_SG1000 = $(RECALBOX_ROMFS_SG1000_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_GENESISPLUSGX),)
 define CONFIGURE_MAIN_SG1000_START
@@ -40,8 +38,6 @@ define CONFIGURE_SG1000_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_SG1000))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_SG1000_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_SG1000),$(SOURCE_ROMDIR_SG1000),$(@D))

@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system msx1 --extension '.mx1 .MX1 .mx2 .MX2 .rom .ROM .dsk .DSK .cas .CAS .m3u .M3U .zip .ZIP' --fullname 'MSX1' --platform msx --theme msx1 libretro:bluemsx:BR2_PACKAGE_LIBRETRO_BLUEMSX
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_MSX1_SOURCE = 
-RECALBOX_ROMFS_MSX1_SITE = 
-RECALBOX_ROMFS_MSX1_INSTALL_STAGING = NO
+RECALBOX_ROMFS_MSX1_SOURCE =
+RECALBOX_ROMFS_MSX1_SITE =
 # Set the system name
 SYSTEM_NAME_MSX1 = msx1
 SYSTEM_XML_MSX1 = $(@D)/$(SYSTEM_NAME_MSX1).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_MSX1 = $(RECALBOX_ROMFS_MSX1_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_BLUEMSX),)
 define CONFIGURE_MAIN_MSX1_START
@@ -40,8 +38,6 @@ define CONFIGURE_MSX1_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_MSX1))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_MSX1_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_MSX1),$(SOURCE_ROMDIR_MSX1),$(@D))

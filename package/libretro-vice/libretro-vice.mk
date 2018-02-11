@@ -3,6 +3,7 @@
 # VICE
 #
 ################################################################################
+
 LIBRETRO_VICE_VERSION = 8139feb92e5de44f7f5d5b6f9029a5edb52e4334
 LIBRETRO_VICE_SITE = $(call github,libretro,vice-libretro,$(LIBRETRO_VICE_VERSION))
 
@@ -21,6 +22,5 @@ define LIBRETRO_VICE_PRE_PATCH_FIXUP
 endef
 
 LIBRETRO_VICE_PRE_PATCH_HOOKS += LIBRETRO_VICE_PRE_PATCH_FIXUP
-
 
 $(eval $(generic-package))

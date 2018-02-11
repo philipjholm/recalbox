@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system atarist --extension '.st .ST .stx .STX .ipf .IPF .zip .ZIP' --fullname 'Atari ST' --platform atarist --theme atarist libretro:hatari:BR2_PACKAGE_LIBRETRO_HATARI
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_ATARIST_SOURCE = 
-RECALBOX_ROMFS_ATARIST_SITE = 
-RECALBOX_ROMFS_ATARIST_INSTALL_STAGING = NO
+RECALBOX_ROMFS_ATARIST_SOURCE =
+RECALBOX_ROMFS_ATARIST_SITE =
 # Set the system name
 SYSTEM_NAME_ATARIST = atarist
 SYSTEM_XML_ATARIST = $(@D)/$(SYSTEM_NAME_ATARIST).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_ATARIST = $(RECALBOX_ROMFS_ATARIST_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_HATARI),)
 define CONFIGURE_MAIN_ATARIST_START
@@ -40,8 +38,6 @@ define CONFIGURE_ATARIST_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_ATARIST))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_ATARIST_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_ATARIST),$(SOURCE_ROMDIR_ATARIST),$(@D))

@@ -3,6 +3,7 @@
 # 4DO
 #
 ################################################################################
+
 LIBRETRO_4DO_VERSION = 312f213a7780cd32573877b544917b816fdda836
 LIBRETRO_4DO_SITE = $(call github,libretro,4do-libretro,$(LIBRETRO_4DO_VERSION))
 

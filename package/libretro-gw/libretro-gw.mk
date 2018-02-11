@@ -3,6 +3,7 @@
 # GW
 #
 ################################################################################
+
 LIBRETRO_GW_VERSION = 068f60077c6cc476eb6d20f0dd4da65c51296eef
 LIBRETRO_GW_SITE = $(call github,libretro,gw-libretro,$(LIBRETRO_GW_VERSION))
 

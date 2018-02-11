@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system apple2 --extension '.nib .NIB .do .DO .po .PO .dsk .DSK' --fullname 'Apple II' --platform apple2 --theme apple2 BR2_PACKAGE_LINAPPLE_PIE
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_APPLE2_SOURCE = 
-RECALBOX_ROMFS_APPLE2_SITE = 
-RECALBOX_ROMFS_APPLE2_INSTALL_STAGING = NO
+RECALBOX_ROMFS_APPLE2_SOURCE =
+RECALBOX_ROMFS_APPLE2_SITE =
 # Set the system name
 SYSTEM_NAME_APPLE2 = apple2
 SYSTEM_XML_APPLE2 = $(@D)/$(SYSTEM_NAME_APPLE2).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_APPLE2 = $(RECALBOX_ROMFS_APPLE2_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifeq ($(BR2_PACKAGE_LINAPPLE_PIE),y)
 define CONFIGURE_APPLE2

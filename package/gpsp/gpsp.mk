@@ -3,6 +3,7 @@
 # gpsp
 #
 ################################################################################
+
 GPSP_VERSION = d884dfcc1bf6951473b28cda5d34cceec093a263
 GPSP_SITE = $(call github,gizmo98,gpsp,$(GPSP_VERSION))
 GPSP_DEPENDENCIES = sdl rpi-userland

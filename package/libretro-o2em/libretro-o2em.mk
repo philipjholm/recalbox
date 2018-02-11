@@ -3,6 +3,7 @@
 # O2EM
 #
 ################################################################################
+
 LIBRETRO_O2EM_VERSION = 8ce8eaaf490468341f32cf21d4a5d372ad42dc53
 LIBRETRO_O2EM_SITE = $(call github,libretro,libretro-o2em,$(LIBRETRO_O2EM_VERSION))
 

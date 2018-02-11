@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system pcenginecd --extension '.cue .CUE .ccd .CCD .chd .CHD' --fullname 'PC Engine CD' --platform pcenginecd --theme pcenginecd libretro:mednafen_supergrafx:BR2_PACKAGE_LIBRETRO_BEETLE_SUPERGRAFX libretro:pce:BR2_PACKAGE_LIBRETRO_BEETLE_PCE
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_PCENGINECD_SOURCE = 
-RECALBOX_ROMFS_PCENGINECD_SITE = 
-RECALBOX_ROMFS_PCENGINECD_INSTALL_STAGING = NO
+RECALBOX_ROMFS_PCENGINECD_SOURCE =
+RECALBOX_ROMFS_PCENGINECD_SITE =
 # Set the system name
 SYSTEM_NAME_PCENGINECD = pcenginecd
 SYSTEM_XML_PCENGINECD = $(@D)/$(SYSTEM_NAME_PCENGINECD).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_PCENGINECD = $(RECALBOX_ROMFS_PCENGINECD_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_BEETLE_SUPERGRAFX)$(BR2_PACKAGE_LIBRETRO_BEETLE_PCE),)
 define CONFIGURE_MAIN_PCENGINECD_START
@@ -46,8 +44,6 @@ define CONFIGURE_PCENGINECD_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_PCENGINECD))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_PCENGINECD_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_PCENGINECD),$(SOURCE_ROMDIR_PCENGINECD),$(@D))

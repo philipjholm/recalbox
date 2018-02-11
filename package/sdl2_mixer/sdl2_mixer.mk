@@ -1,6 +1,6 @@
 ################################################################################
 #
-# sdl2 mixer http://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.0.zip 
+# sdl2 mixer http://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.0.zip
 #
 ################################################################################
 

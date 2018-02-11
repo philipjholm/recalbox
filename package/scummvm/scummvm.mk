@@ -8,13 +8,13 @@ SCUMMVM_VERSION = fae5ccd1ed7100478a23f3afc41ea935d2ee7abc
 SCUMMVM_REPO = scummvm
 SCUMMVM_SITE = $(call github,$(SCUMMVM_REPO),scummvm,$(SCUMMVM_VERSION))
 SCUMMVM_LICENSE = GPL2
-SCUMMVM_DEPENDENCIES = sdl2 zlib jpeg-turbo libmpeg2 libogg libvorbis flac libmad libpng libtheora faad2 fluidsynth freetype 
+SCUMMVM_DEPENDENCIES = sdl2 zlib jpeg-turbo libmpeg2 libogg libvorbis flac libmad libpng libtheora faad2 fluidsynth freetype
 
 SCUMMVM_ADDITIONAL_FLAGS= -I$(STAGING_DIR)/usr/include -I$(STAGING_DIR)/usr/include/interface/vcos/pthreads -I$(STAGING_DIR)/usr/include/interface/vmcs_host/linux -lpthread -lm -L$(STAGING_DIR)/usr/lib -lGLESv2 -lEGL
 
 ifeq ($(BR2_PACKAGE_RPI_USERLAND),y)
-	SCUMMVM_ADDITIONAL_FLAGS += -lbcm_host -lvchostif
-	SCUMMVM_CONF_OPTS += --host=raspberrypi
+  SCUMMVM_ADDITIONAL_FLAGS += -lbcm_host -lvchostif
+  SCUMMVM_CONF_OPTS += --host=raspberrypi
 endif
 
 SCUMMVM_CONF_ENV += RANLIB="$(TARGET_RANLIB)" STRIP="$(TARGET_STRIP)" AR="$(TARGET_AR) cru" AS="$(TARGET_AS)"

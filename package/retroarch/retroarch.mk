@@ -12,16 +12,16 @@ RETROARCH_CONF_OPTS += --disable-oss --enable-zlib
 RETROARCH_DEPENDENCIES = host-pkgconf recalbox-system
 
 ifeq ($(BR2_PACKAGE_SDL2),y)
-	RETROARCH_CONF_OPTS += --enable-sdl2
-	RETROARCH_DEPENDENCIES += sdl2
+  RETROARCH_CONF_OPTS += --enable-sdl2
+  RETROARCH_DEPENDENCIES += sdl2
 else
-	RETROARCH_CONF_OPTS += --disable-sdl2
-	ifeq ($(BR2_PACKAGE_SDL),y)
-		RETROARCH_CONF_OPTS += --enable-sdl
-		RETROARCH_DEPENDENCIES += sdl
-	else
-		RETROARCH_CONF_OPTS += --disable-sdl
-	endif
+  RETROARCH_CONF_OPTS += --disable-sdl2
+  ifeq ($(BR2_PACKAGE_SDL),y)
+    RETROARCH_CONF_OPTS += --enable-sdl
+    RETROARCH_DEPENDENCIES += sdl
+  else
+    RETROARCH_CONF_OPTS += --disable-sdl
+  endif
 endif
 
 # RPI 0 and 1
@@ -39,7 +39,7 @@ endif
 
 # Add dispamnx renderer for Pi
 ifeq ($(BR2_PACKAGE_RPI_FIRMWARE),y)
-	 RETROARCH_CONF_OPTS += --enable-dispmanx
+  RETROARCH_CONF_OPTS += --enable-dispmanx
 endif
 
 # odroid xu4
@@ -128,8 +128,8 @@ define RETROARCH_MALI_FIXUP
 endef
 
 ifeq ($(BR2_PACKAGE_MALI_OPENGLES_SDK),y)
-	RETROARCH_PRE_CONFIGURE_HOOKS += RETROARCH_MALI_FIXUP
-	RETROARCH_CONF_OPTS += --enable-opengles --enable-mali_fbdev
+  RETROARCH_PRE_CONFIGURE_HOOKS += RETROARCH_MALI_FIXUP
+  RETROARCH_CONF_OPTS += --enable-opengles --enable-mali_fbdev
 endif
 
 define RETROARCH_CONFIGURE_CMDS
@@ -198,8 +198,8 @@ endif
 # Will be equal to LIBRETRO_PLATFORM otherwise
 LIBRETRO_BOARD=$(LIBRETRO_PLATFORM)
 ifeq ($(RECALBOX_SYSTEM_VERSION)),rpi2)
-	LIBRETRO_BOARD=$(RECALBOX_SYSTEM_VERSION)
+  LIBRETRO_BOARD=$(RECALBOX_SYSTEM_VERSION)
 endif
 ifeq ($(RECALBOX_SYSTEM_VERSION)),rpi3)
-	LIBRETRO_BOARD=$(RECALBOX_SYSTEM_VERSION)
+  LIBRETRO_BOARD=$(RECALBOX_SYSTEM_VERSION)
 endif

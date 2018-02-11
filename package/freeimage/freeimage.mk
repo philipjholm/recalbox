@@ -3,6 +3,7 @@
 # freeimage
 #
 ################################################################################
+
 FREEIMAGE_VERSION = 3.16.0
 FREEIMAGE_LIB_VERSION = 3
 FREEIMAGE_SITE = http://downloads.sourceforge.net/freeimage
@@ -10,7 +11,7 @@ FREEIMAGE_SOURCE = FreeImage3160.zip
 FREEIMAGE_LICENSE = GPLv2
 FREEIMAGE_INSTALL_STAGING = YES
 
-FREEIMAGE_CFLAGS= 
+FREEIMAGE_CFLAGS=
 
 define FREEIMAGE_EXTRACT_CMDS
 	unzip -q -o -d $(BUILD_DIR) $(DL_DIR)/$(FREEIMAGE_SOURCE)
@@ -19,7 +20,7 @@ define FREEIMAGE_EXTRACT_CMDS
 endef
 
 ifeq ($(BR2_ARM_CPU_HAS_NEON),y)
-	FREEIMAGE_CFLAGS=$(TARGET_CFLAGS) -DPNG_ARM_NEON_OPT=0
+  FREEIMAGE_CFLAGS=$(TARGET_CFLAGS) -DPNG_ARM_NEON_OPT=0
 endif
 
 define FREEIMAGE_BUILD_CMDS

@@ -3,6 +3,7 @@
 # GENESISPLUSGX
 #
 ################################################################################
+
 LIBRETRO_GENESISPLUSGX_VERSION = 71040583d6a9d9b39116d8529f66a376f3f472b5
 LIBRETRO_GENESISPLUSGX_SITE = $(call github,libretro,Genesis-Plus-GX,$(LIBRETRO_GENESISPLUSGX_VERSION))
 

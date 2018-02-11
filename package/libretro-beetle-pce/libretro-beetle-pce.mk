@@ -3,6 +3,7 @@
 # BEETLE_PCE
 #
 ################################################################################
+
 LIBRETRO_BEETLE_PCE_VERSION = d2080d754aad8f6d1006e0ce2d03b86612f4a38f
 LIBRETRO_BEETLE_PCE_SITE = $(call github,libretro,beetle-pce-fast-libretro,$(LIBRETRO_BEETLE_PCE_VERSION))
 

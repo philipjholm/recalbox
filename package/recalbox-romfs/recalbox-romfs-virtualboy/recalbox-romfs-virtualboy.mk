@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system virtualboy --extension '.vb .VB .zip .ZIP' --fullname 'Virtual Boy' --platform virtualboy --theme virtualboy libretro:mednafen_vb:BR2_PACKAGE_LIBRETRO_BEETLE_VB
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_VIRTUALBOY_SOURCE = 
-RECALBOX_ROMFS_VIRTUALBOY_SITE = 
-RECALBOX_ROMFS_VIRTUALBOY_INSTALL_STAGING = NO
+RECALBOX_ROMFS_VIRTUALBOY_SOURCE =
+RECALBOX_ROMFS_VIRTUALBOY_SITE =
 # Set the system name
 SYSTEM_NAME_VIRTUALBOY = virtualboy
 SYSTEM_XML_VIRTUALBOY = $(@D)/$(SYSTEM_NAME_VIRTUALBOY).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_VIRTUALBOY = $(RECALBOX_ROMFS_VIRTUALBOY_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_BEETLE_VB),)
 define CONFIGURE_MAIN_VIRTUALBOY_START
@@ -40,8 +38,6 @@ define CONFIGURE_VIRTUALBOY_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_VIRTUALBOY))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_VIRTUALBOY_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_VIRTUALBOY),$(SOURCE_ROMDIR_VIRTUALBOY),$(@D))

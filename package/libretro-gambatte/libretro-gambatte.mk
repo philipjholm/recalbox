@@ -3,6 +3,7 @@
 # GAMBATTE
 #
 ################################################################################
+
 LIBRETRO_GAMBATTE_VERSION = bcfd2df6d946c200fc6e50b0956b209582221492
 LIBRETRO_GAMBATTE_SITE = $(call github,libretro,gambatte-libretro,$(LIBRETRO_GAMBATTE_VERSION))
 

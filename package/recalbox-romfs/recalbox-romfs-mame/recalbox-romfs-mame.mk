@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system mame --extension '.zip .ZIP' --fullname 'Mame' --platform mame --theme mame libretro:mame078:BR2_PACKAGE_LIBRETRO_MAME2003 libretro:imame4all:BR2_PACKAGE_LIBRETRO_IMAME advancemame:advancemame:BR2_PACKAGE_ADVANCEMAME libretro:mame2010:BR2_PACKAGE_LIBRETRO_MAME2010
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_MAME_SOURCE = 
-RECALBOX_ROMFS_MAME_SITE = 
-RECALBOX_ROMFS_MAME_INSTALL_STAGING = NO
+RECALBOX_ROMFS_MAME_SOURCE =
+RECALBOX_ROMFS_MAME_SITE =
 # Set the system name
 SYSTEM_NAME_MAME = mame
 SYSTEM_XML_MAME = $(@D)/$(SYSTEM_NAME_MAME).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_MAME = $(RECALBOX_ROMFS_MAME_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_MAME2003)$(BR2_PACKAGE_LIBRETRO_IMAME)$(BR2_PACKAGE_ADVANCEMAME)$(BR2_PACKAGE_LIBRETRO_MAME2010),)
 define CONFIGURE_MAIN_MAME_START
@@ -67,8 +65,6 @@ define CONFIGURE_MAME_ADVANCEMAME_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_MAME))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_MAME_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_MAME),$(SOURCE_ROMDIR_MAME),$(@D))

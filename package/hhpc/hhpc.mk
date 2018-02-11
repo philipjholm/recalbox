@@ -3,6 +3,7 @@
 # HHPC
 #
 ################################################################################
+
 HHPC_VERSION = e8803cd5c2b51f340fbb76c3ace87ad1c932161b
 HHPC_SITE = $(call github,aktau,hhpc,$(HHPC_VERSION))
 HHPC_LICENSE = BSD-3c

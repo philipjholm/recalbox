@@ -8,9 +8,8 @@
 # ./scripts/linux/empack.py --system psx --extension '.img .IMG .pbp .PBP .cue .CUE .iso .ISO .ccd .CCD .cbn .CBN .m3u .M3U .chd .CHD' --fullname 'Sony Playstation 1' --platform psx --theme psx libretro:pcsx_rearmed:BR2_PACKAGE_LIBRETRO_PCSX libretro:mednafen_psx:BR2_PACKAGE_LIBRETRO_BEETLE_PSX libretro:mednafen_psx_hw:BR2_PACKAGE_LIBRETRO_BEETLE_PSX_HW
 
 # Name the 3 vars as the package requires
-RECALBOX_ROMFS_PSX_SOURCE = 
-RECALBOX_ROMFS_PSX_SITE = 
-RECALBOX_ROMFS_PSX_INSTALL_STAGING = NO
+RECALBOX_ROMFS_PSX_SOURCE =
+RECALBOX_ROMFS_PSX_SITE =
 # Set the system name
 SYSTEM_NAME_PSX = psx
 SYSTEM_XML_PSX = $(@D)/$(SYSTEM_NAME_PSX).xml
@@ -19,7 +18,6 @@ SOURCE_ROMDIR_PSX = $(RECALBOX_ROMFS_PSX_PKGDIR)/roms
 
 # CONFIGGEN_STD_CMD is defined in recalbox-romfs, so take good care that
 # variables are global across buildroot
-
 
 ifneq ($(BR2_PACKAGE_LIBRETRO_PCSX)$(BR2_PACKAGE_LIBRETRO_BEETLE_PSX)$(BR2_PACKAGE_LIBRETRO_BEETLE_PSX_HW),)
 define CONFIGURE_MAIN_PSX_START
@@ -52,8 +50,6 @@ define CONFIGURE_PSX_LIBRETRO_END
 	$(call RECALBOX_ROMFS_CALL_END_EMULATOR,$(SYSTEM_XML_PSX))
 endef
 endif
-
-
 
 define CONFIGURE_MAIN_PSX_END
 	$(call RECALBOX_ROMFS_CALL_END_SYSTEM,$(SYSTEM_XML_PSX),$(SOURCE_ROMDIR_PSX),$(@D))
