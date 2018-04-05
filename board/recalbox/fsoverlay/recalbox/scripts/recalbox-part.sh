@@ -13,14 +13,47 @@
 # from the root device partition the partitions can be determined
 # the root partition is not always /dev/mmcblk0p1, mainly in case you boot from an usb stick or a hard drive
 
+determine_system_part() {
+    read -r cmdline < /proc/cmdline
+    for param in $cmdline ; do
+        case ${param} in
+            # Consider adding UUID and PARTUUID someday for
+            label=*) label=${param#label=};;
+            root=*) root=${param#root=};;
+        esac
+    done
+    if [ ! -z "$root" ] ; then
+        # Make sure it's a /dev/xxx
+        if echo "$root" | grep -q "^/dev/" ; then
+            echo "$root"
+            return 0
+        # It can sometimes return a PARTUUID=blablabla
+        else
+            property=`echo $root |cut -d '=' -f 1`
+            value=`echo $root |cut -d '=' -f 2`
+            blkid | grep "$property=\"$value\""| cut -d ':' -f 1
+            return 0
+        fi
+    elif [ ! -z "$label" ] ; then
+        blkid | grep "LABEL=\"$label\"" | cut -d ':' -f 1
+        return 0
+    else
+        echo ""
+        return 1
+    fi
+}
 determine_boot_part() {
-    ROOTPART=$(rdev | sed -e s+' /$'++)
+    ROOTPART=`determine_system_part`
     XROOT=$(echo "${ROOTPART}" | sed -e s+'^.*\([0-9]\)$'+'\1'+)
 
-    # check that it is a number
-    if ! echo "${XROOT}" | grep -qE '^[0-9]$'
+    # check that it is a number on a non squashfs /
+    if ! ( echo "${XROOT}" | grep -qE '^[0-9]$' ) && ! (mount | grep -q "^overlay on /")
     then
 	return 1
+    # On squashfs, / is an overlay, so we can't find /boot with a partition number
+    elif mount | grep -q "^overlay on /" ; then
+	blkid | grep -E 'LABEL="(BOOT|boot)"' | cut -d ':' -f 1
+	return 0
     fi
 
     XBOOT=$(expr ${XROOT} - 1)
@@ -28,7 +61,7 @@ determine_boot_part() {
 }
 
 determine_default_share_part() {
-    ROOTPART=$(rdev | sed -e s+' /$'++)
+    ROOTPART=`determine_system_part`
     XROOT=$(echo "${ROOTPART}" | sed -e s+'^.*\([0-9]\)$'+'\1'+)
 
     # check that it is a number
@@ -76,7 +109,9 @@ case "${PARTNAME}" in
 	;;
 
     "system")
-	rdev | sed -e s+' /$'++
+	# Works awfully bad with squashfs. Better read /proc/cmdline
+	#~ rdev | sed -e s+' /$'++
+	determine_system_part
 	;;
 
     "share_internal")

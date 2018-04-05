@@ -354,6 +354,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Odroid XU4: improved HDMI stability, boot.ini options
 - fix: Game&Watch core name not properly displayed
 - manager: update translations
+- improve partitions detection
 
 ## [18.03.30] - 2018-03-30
 - moonlight: fix bad SDL2 GUID generation
