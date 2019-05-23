@@ -13,6 +13,7 @@
 - New core! Added Gearsystem libretro core. An optimized GG/SMS/SG core working better on some games.
 - New core! Added SameBoy libretro core. Game link support for GB/GBC
 - New video snaps! Now see short videos of games before launching them
+- New emulator! Nintendo 3DS on x86_64 (RetroArch core: libretro-citra)
 - GPi Case Plug & Play: Autodetect and install drivers & appropriate themes and settings
 - New system! PC-88 added with libretro's quasi88 emulator
 - New system! TIC-80 added with libretro's tic80 emulator

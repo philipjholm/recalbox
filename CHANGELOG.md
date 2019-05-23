@@ -26,7 +26,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Fix x86/x64 scanning too few /dev/input/event
 - Bump ScummVM (new theme)
 - Enable toolchain LTO
-- Add Uzebox emulator (libretro-uzem)
+- Uzem: Add Uzebox emulator 
 - Fix wifi issue in case of bad recalbox.conf
 - Add game info screen in demo mode
 - Change default mame emulator to mame2003_plus core (0.78 romset with improvements and additions)
@@ -80,6 +80,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Replace old TheGameDB scraper with a new one usign latest APIs
 - Vice x64sc (accurate) emulator for Commodore 64
 - Remove generic MSX in favor of new MSXturboR system
+- Citra: Add Nintendo 3DS emulator (x86_64 only)
 
 ## [6.0] - DragonBlaze
 - Change name from 5.0 to 6.0 DragonBlaze

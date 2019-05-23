@@ -141,6 +141,16 @@ define RECALBOX_ROMFS_INSTALL_TARGET_CMDS
 endef
 
 # Add necessary dependencies
+# System: 3do
+ifneq ($(BR2_PACKAGE_LIBRETRO_4DO),)
+	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-3do
+endif
+
+# System: 3ds
+ifneq ($(BR2_PACKAGE_LIBRETRO_CITRA),)
+        RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-3ds
+endif
+
 # System: amiga600
 ifeq ($(BR2_PACKAGE_AMIBERRY),y)
  	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-amiga600
@@ -527,11 +537,6 @@ endif
 # System: zxspectrum
 ifneq ($(BR2_PACKAGE_LIBRETRO_FUSE),)
         RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-zxspectrum
-endif
-
-# System: 3do
-ifneq ($(BR2_PACKAGE_LIBRETRO_4DO),)
-	RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-3do
 endif
 
 # System: atari800
