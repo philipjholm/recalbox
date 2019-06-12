@@ -25,7 +25,7 @@ LIBRETRO_CITRA_SUPPORTS_IN_SOURCE_BUILD = NO
 define LIBRETRO_CITRA_INSTALL_TARGET_CMDS
 	mkdir -p $(TARGET_DIR)/usr/lib/libretro
 	$(INSTALL) -D $(@D)/buildroot-build/src/citra_libretro/citra_canary_libretro.so \
-		$(TARGET_DIR)/usr/lib/libretro/
+		$(TARGET_DIR)/usr/lib/libretro/citra_libretro.so
 	cp -pr $(@D)/buildroot-build/externals/inih/*.so $(TARGET_DIR)/usr/lib
 	cp -pr $(@D)/buildroot-build/externals/libressl/tls/*.so $(TARGET_DIR)/usr/lib
 	cp -pr $(@D)/buildroot-build/externals/libressl/ssl/*.so $(TARGET_DIR)/usr/lib
