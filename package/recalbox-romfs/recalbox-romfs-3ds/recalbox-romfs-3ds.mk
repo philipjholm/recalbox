@@ -5,7 +5,7 @@
 ################################################################################
 
 # Package generated with :
-# ./scripts/linux/empack.py --system 3ds --extension '.3ds .3DS .3dsx .3DSX .elf .ELF .axf .AXF .cci .CCI .cxi .CXI .app .APP .zip .ZIP .7z .7Z' --fullname 'Nintendo 3DS' --platform 3ds --theme 3ds libretro:citra:BR2_PACKAGE_LIBRETRO_CITRA
+# ./scripts/linux/empack.py --system 3ds --extension '.3ds .3DS .3dsx .3DSX .elf .ELF .axf .AXF .cci .CCI .cxi .CXI .app .APP .zip .ZIP .7z .7Z' --fullname 'Nintendo 3DS' --platform 3ds --theme 3ds libretro:citra_canary:BR2_PACKAGE_LIBRETRO_CITRA
 
 # Name the 3 vars as the package requires
 RECALBOX_ROMFS_3DS_SOURCE = 
@@ -31,8 +31,8 @@ define CONFIGURE_3DS_LIBRETRO_START
 	$(call RECALBOX_ROMFS_CALL_START_EMULATOR,$(SYSTEM_XML_3DS),libretro)
 endef
 ifeq ($(BR2_PACKAGE_LIBRETRO_CITRA),y)
-define CONFIGURE_3DS_LIBRETRO_CITRA_DEF
-	$(call RECALBOX_ROMFS_CALL_ADD_CORE,$(SYSTEM_XML_3DS),citra)
+define CONFIGURE_3DS_LIBRETRO_CITRA_CANARY_DEF
+	$(call RECALBOX_ROMFS_CALL_ADD_CORE,$(SYSTEM_XML_3DS),citra_canary)
 endef
 endif
 
@@ -51,7 +51,7 @@ endif
 define RECALBOX_ROMFS_3DS_CONFIGURE_CMDS
 	$(CONFIGURE_MAIN_3DS_START)
 	$(CONFIGURE_3DS_LIBRETRO_START)
-	$(CONFIGURE_3DS_LIBRETRO_CITRA_DEF)
+	$(CONFIGURE_3DS_LIBRETRO_CITRA_CANARY_DEF)
 	$(CONFIGURE_3DS_LIBRETRO_END)
 	$(CONFIGURE_MAIN_3DS_END)
 endef
