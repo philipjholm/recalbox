@@ -584,4 +584,9 @@ ifneq ($(BR2_PACKAGE_LIBRETRO_UZEM),)
     RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-uzebox
 endif
 
+# System: 3ds
+ifneq ($(BR2_PACKAGE_CITRA_EMU),)
+    RECALBOX_ROMFS_DEPENDENCIES += recalbox-romfs-3ds
+endif
+
 $(eval $(generic-package))
