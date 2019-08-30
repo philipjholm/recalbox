@@ -4,12 +4,12 @@
 #
 ################################################################################
 
-CITRA_EMU_VERSION = nightly-1342
+CITRA_EMU_VERSION = nightly-1343
 CITRA_EMU_SITE = https://github.com/citra-emu/citra-nightly.git
 CITRA_EMU_SITE_METHOD = git
 CITRA_EMU_GIT_SUBMODULES = YES
 CITRA_EMU_LICENSE = GPLv2
-CITRA_EMU_DEPENDENCIES = sdl2 fmt ffmpeg boost
+CITRA_EMU_DEPENDENCIES = sdl2 ffmpeg boost
 CITRA_EMU_SUPPORTS_IN_SOURCE_BUILD = NO
 
 CITRA_EMU_CONF_OPTS += -DENABLE_QT=OFF
