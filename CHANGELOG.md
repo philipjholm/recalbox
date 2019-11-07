@@ -63,6 +63,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Bump FBNeo
 - Fix videosnaps on x64 gpus
 - Bump Retroarch
+- Share partition now created with exfat instead of ext4
 
 ## [6.1]
 - Replacement of the neogeo intro video
