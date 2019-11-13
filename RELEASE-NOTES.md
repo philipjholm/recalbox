@@ -50,6 +50,8 @@
 - Bump FreeIntV to include latest fixes
 - Bump FBNeo to include latest fixes
 - Bump Retroarch to 1.8.1  to include latest fixes & optimizations
+- Improved retroarch support cd 
+
 
 ### Fixes
 - Fix Reicast on XU4 and PC platforms and fix wrong flycast entry on Rpi
