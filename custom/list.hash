@@ -19,6 +19,7 @@ d99f57d8a90d21cf8b774aac041e3d2a  package/mesa3d/mesa3d.hash
 --------------------------------  package/mesa3d/0001-musl.patch
 --------------------------------  package/mesa3d/0002-Fix-endianess-detection-with-musl-based-toolchains.patch
 --------------------------------  package/mesa3d/0003-configure.ac-invert-order-for-wayland-scanner-check.patch
+7c0b9bb15e8a8759afe2c683190af320  package/mesa3d-headers/mesa3d-headers.mk
 87b40531b2b16dba4d10dc0aa060f621  package/omxplayer/omxplayer.mk
 f38548efeaeaaa6515c91bc6ab7d9d54  package/rpi-firmware/cmdline.txt
 f01ea6ba5ccf7e7b094e83301984333d  package/rpi-firmware/config.txt
