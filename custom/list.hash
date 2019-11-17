@@ -16,6 +16,7 @@ d2f9d3874553506921d9f347f6752203  package/ffmpeg/ffmpeg.mk
 9bff5f6d3c9c6de92b5b69491b8cb3db  package/lirc-tools/lirc-tools.mk
 90b33f03c3af71cc22494db010c0f632  package/mesa3d/mesa3d.mk
 d99f57d8a90d21cf8b774aac041e3d2a  package/mesa3d/mesa3d.hash
+026020762df2c2869eb48dc81f5c8cec  package/mesa3d/Config.in
 --------------------------------  package/mesa3d/0001-musl.patch
 --------------------------------  package/mesa3d/0002-Fix-endianess-detection-with-musl-based-toolchains.patch
 --------------------------------  package/mesa3d/0003-configure.ac-invert-order-for-wayland-scanner-check.patch

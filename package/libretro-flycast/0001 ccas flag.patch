@@ -1,0 +1,11 @@
+--- Makefile	2019-11-17 22:55:31.321260920 +0100
++++ "Makefile (copie)"	2019-11-17 22:56:01.581180854 +0100
+@@ -147,7 +147,7 @@
+ 		CFLAGS += -m32 -D TARGET_LINUX_x86 -D TARGET_NO_AREC
+ 		SINGLE_PREC_FLAGS=1
+ 		MFLAGS += -m32
+-		ASFLAGS += --32
++		ASFLAGS += -m32
+ 		LDFLAGS += -m32
+ 		HAVE_GENERIC_JIT = 0
+ 	endif
