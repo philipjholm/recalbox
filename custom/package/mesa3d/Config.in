@@ -310,3 +310,4 @@ comment "mesa3d needs a toolchain w/ C++, NPTL, dynamic library"
 	depends on !BR2_INSTALL_LIBSTDCPP || !BR2_TOOLCHAIN_HAS_THREADS_NPTL || \
 		BR2_STATIC_LIBS
 	depends on BR2_TOOLCHAIN_HAS_SYNC_1
+	
