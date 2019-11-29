@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-CITRA_EMU_VERSION = nightly-1372
+CITRA_EMU_VERSION = nightly-1381
 CITRA_EMU_SITE = https://github.com/citra-emu/citra-nightly.git
 CITRA_EMU_SITE_METHOD = git
 CITRA_EMU_GIT_SUBMODULES = YES
@@ -43,6 +43,8 @@ define CITRA_EMU_INSTALL_TARGET_CMDS
 	cp -pr $(@D)/buildroot-build/externals/lurlparser/lib*\
 		$(TARGET_DIR)/usr/lib/
 	cp -pr $(@D)/buildroot-build/externals/fmt/lib* \
+		$(TARGET_DIR)/usr/lib/
+	cp -pr $(@D)/buildroot-build/externals/lodepng/lib* \
 		$(TARGET_DIR)/usr/lib/
 endef
 
