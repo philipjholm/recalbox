@@ -23,6 +23,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Fix fulscreen for oric and apple2 on x86/x86_64
 - Fix apple2 on x86/x86_64
 
+- Bump libretro-cheats to v1.8.0
 
 ## [6.1.1]
 - Add zfast shaders
