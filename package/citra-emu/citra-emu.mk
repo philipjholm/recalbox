@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-CITRA_EMU_VERSION = nightly-1381
+CITRA_EMU_VERSION = nightly-1399
 CITRA_EMU_SITE = https://github.com/citra-emu/citra-nightly.git
 CITRA_EMU_SITE_METHOD = git
 CITRA_EMU_GIT_SUBMODULES = YES
